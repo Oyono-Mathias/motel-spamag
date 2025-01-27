@@ -1,0 +1,202 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body and main layout */
+body {
+    background-color: #f5f5f5;
+    background-image: url('./image/af0.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for header */
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+ul.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+ul.navbar li {
+    display: inline;
+}
+
+ul.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+ul.navbar a:hover {
+    color: #f39c12;
+}
+
+/* Section d'accueil */
+.accueil-section {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+}
+
+.accueil-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.accueil-section p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Diaporama */
+.diaporama-container {
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+}
+
+.diaporama-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Section cachée */
+.hidden {
+    display: none;
+}
+
+/* Section "À propos" */
+.about-section {
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Section "Nos Chambres" */
+.chambres-section {
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.chambres-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.chambres-section .galerie {
+    display: flex;
+    gap: 20px;
+}
+
+.chambres-section .image-box {
+    width: 22%;
+    text-align: center;
+}
+
+.chambres-section .image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.chambres-section .image-box p {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Section "Réservation" */
+.reservation-section {
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.reservation-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.reservation-section .pricing p {
+    cursor: pointer;
+    font-size: 20px;
+    color: #f39c12;
+    margin-bottom: 10px;
+    transition: color 0.3s, transform 0.3s;
+    padding: 10px;
+    border: 2px solid #f39c12;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reservation-section .pricing p:hover {
+    color: #e67e22;
+    transform: scale(1.1);
+    background-color: #f39c12;
+    color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    ul.navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul.navbar li {
+        margin-bottom: 10px;
+    }
+
+    .chambres-section .galerie {
+        flex-direction: column;
+    }
+
+    .chambres-section .image-box {
+        width: 100%;
+    }
+}

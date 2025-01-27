@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Motel Spamag</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="./image/logo.png" alt="Logo Motel Spamag">
+            <span>M</span>otel Spamag
+        </a>
+        <ul class="navbar">
+            <li><a href="#" onclick="toggleSection('accueil')">Accueil</a></li>
+            <li><a href="#" onclick="toggleSection('about')">À propos</a></li>
+            <li><a href="#" onclick="toggleSection('chambres')">Nos Chambres</a></li>
+            <li><a href="#" onclick="toggleSection('contact')">Contact</a></li>
+            <li><a href="#" onclick="toggleSection('reservation')">Réservation</a></li>
+        </ul>
+    </header>
+
+    <section class="accueil-section" id="accueil">
+        <h1>Bienvenue au Motel Spamag</h1>
+        <p>Le lieu où confort et détente se rencontrent.</p>
+
+        <!-- Diaporama pour les images extérieures -->
+        <div class="diaporama-container">
+            <img class="diaporama-image" src="./image/lex1.jpg" alt="Extérieur Motel" id="diaporamaImage">
+        </div>
+    </section>
+
+    <!-- Section "À propos" -->
+    <section class="about-section hidden" id="about">
+        <h2>À propos de nous</h2>
+        <p>Bienvenue au <strong>Motel Spamag</strong>, un lieu où confort et détente se rencontrent pour vous offrir une expérience inoubliable. 
+           Situé dans un cadre paisible et chaleureux, notre motel met à votre disposition des chambres modernes et bien équipées, 
+           idéales pour les séjours en famille, entre amis ou pour les voyages d'affaires.</p>
+        <p>Nous nous engageons à offrir à nos clients un service de qualité avec des équipements tels que la télévision avec Canal+, 
+           un congélateur personnel, et une alimentation en électricité 24h/24 grâce à l'énergie solaire et Enerca.</p>
+        <p>Le <strong>Motel Spamag</strong> est dirigé par <strong>NGOMATEKE MAGLOIRE</strong>, un passionné de l'hôtellerie qui veille à ce que chaque client 
+           bénéficie d'un accueil chaleureux et d'un séjour confortable.</p>
+    </section>
+
+    <!-- Section "Nos Chambres" -->
+    <section class="chambres-section hidden" id="chambres">
+        <h2>Nos Chambres</h2>
+        <div class="galerie">
+            <div class="image-box">
+                <img src="./chambre/cham1.jpg" alt="Chambre 1">
+                <p>Profitez du confort et du calme absolu.</p>
+            </div>
+            <div class="image-box">
+                <img src="./chambre/cham2.jpg" alt="Chambre 2">
+                <p>Un espace parfait pour votre séjour.</p>
+            </div>
+            <div class="image-box">
+                <img src="./chambre/cham3.jpg" alt="Chambre 3">
+                <p>Détente et luxe à votre portée.</p>
+            </div>
+            <div class="image-box">
+                <img src="./chambre/cham4.jpg" alt="Chambre 4">
+                <p>Une atmosphère apaisante vous attend.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section "Contact" -->
+    <section class="contact-section hidden" id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Téléphone : +123 456 789</p>
+        <p>Email : contact@motelspamag.com</p>
+    </section>
+
+    <!-- Section "Réservation" -->
+    <section class="reservation-section hidden" id="reservation">
+        <h2>Réservation</h2>
+        <div class="pricing">
+            <p onclick="showPriceAlert('5000 FCFA par heure')">Prix par heure : 5000 FCFA</p>
+            <p onclick="showPriceAlert('30000 FCFA par jour')">Prix par jour : 30000 FCFA</p>
+            <p onclick="showPriceAlert('15000 FCFA par passe temps')">Prix par passe temps : 15000 FCFA</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.classList.toggle('hidden');
+            const sections = document.querySelectorAll('.accueil-section, .about-section, .chambres-section, .contact-section, .reservation-section');
+            sections.forEach(s => {
+                if (s.id !== id) {
+                    s.classList.add('hidden');
+                }
+            });
+        }
+
+        function showPriceAlert(price) {
+            alert("Veuillez nous appeler au numéro : +123 456 789 pour plus d'informations. Prix sélectionné : " + price);
+        }
+
+        // Diaporama
+        let currentImageIndex = 0;
+        const images = ["./image/lex1.jpg", "./image/lex2.jpg", "./image/lex3.jpg", "./image/lex4.jpg"];
+        const diaporamaImage = document.getElementById("diaporamaImage");
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            diaporamaImage.src = images[currentImageIndex];
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+</body>
+</html>
